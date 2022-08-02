@@ -18,6 +18,7 @@ public class PaddleControl : MonoBehaviour
     private void Update()
     {
         MovePaddle(GetInput());
+        Debug.Log("Speed of Paddle " + gameObject.name + "is " + rigid.velocity);
     }
 
     Vector2 GetInput()
@@ -30,5 +31,7 @@ public class PaddleControl : MonoBehaviour
     void MovePaddle(Vector2 movementDir)
     {
         rigid.velocity = movementDir * speed;
+        transform.position = new Vector2(transform.position.x,
+        Mathf.Clamp(transform.position.y, -3.3f, 3.3f));
     }
 }
