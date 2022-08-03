@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PU_SpeedUp : MonoBehaviour
+public class PU_PaddleSpeedUp : MonoBehaviour
 {
-
     private void OnEnable()
     {
         Invoke("DestroySelf", 5);
@@ -18,7 +17,9 @@ public class PU_SpeedUp : MonoBehaviour
     {
         if (other.CompareTag("ball"))
         {
-            other.GetComponent<BallControl>().IncreaseSpeed(1.5f);
+            var paddle = other.GetComponent<BallControl>().lastTouchPaddle;
+            if(paddle !=null) paddle.IncreaseSpeed(2f);
+            
             DestroySelf();
         }
     }

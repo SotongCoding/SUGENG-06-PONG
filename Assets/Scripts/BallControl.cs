@@ -7,6 +7,13 @@ public class BallControl : MonoBehaviour
     [SerializeField] Vector2 speed;
     [SerializeField] Rigidbody2D rigid;
 
+    public PaddleControl lastTouchPaddle { private set; get; }
+
+    private void Start()
+    {
+        rigid = GetComponent<Rigidbody2D>();
+        ThrowBall();
+    }
     internal void ResetPos()
     {
         transform.position = Vector3.zero;
@@ -23,14 +30,17 @@ public class BallControl : MonoBehaviour
         Debug.Log("Ball Speed : " + rigid.velocity);
     }
 
-    private void Start()
-    {
-        rigid = GetComponent<Rigidbody2D>();
-        ThrowBall();
-    }
 
     internal void IncreaseSpeed(float multipleSpeed)
     {
         rigid.velocity *= Mathf.Clamp(multipleSpeed, 1, 2);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("paddle"))
+        {
+            lastTouchPaddle = other.gameObject.GetComponent<PaddleControl>();
+        }
     }
 }

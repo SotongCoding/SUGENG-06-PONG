@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6578692280708650124}
   - component: {fileID: 6578692280708650127}
   - component: {fileID: 6578692280708650126}
-  - component: {fileID: -7803585276170640296}
+  - component: {fileID: 5763453755346718428}
   m_Layer: 0
-  m_Name: SpeedPU
+  m_Name: PU_PaddleLength
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dc58eb568929d40d7b5130c6555e6f12, type: 3}
-  m_Color: {r: 0.6462264, g: 0.95230305, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.28567073, b: 0.23113209, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-7803585276170640296
+--- !u!114 &5763453755346718428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,6 +108,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6578692280708650113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fbdb17be6d514731823dda3e642cf65, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cf02099e67fb4c019d919945c2ad063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

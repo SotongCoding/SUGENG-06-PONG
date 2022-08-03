@@ -11,4 +11,7 @@ public class MainMenuControl : MonoBehaviour
         SceneManager.LoadScene("Game");
         Debug.Log("Created By :  Sugeng-06");
     }
+    public void OpenURl(){
+        Application.OpenURL("https://github.com/SotongCoding/SUGENG-06-PONG");
+    }
 }
