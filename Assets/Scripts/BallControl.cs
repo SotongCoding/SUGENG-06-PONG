@@ -17,7 +17,7 @@ public class BallControl : MonoBehaviour
 
     void ThrowBall()
     {
-        speed = new Vector2(Random.Range(-10, 11), Random.Range(-10, 11));
+        speed = new Vector2(Random.Range(-10, 11), Random.Range(0, 2) >= 0 ? 1 : -1);
         rigid.velocity = speed.normalized * 5;
 
         Debug.Log("Ball Speed : " + rigid.velocity);
@@ -27,5 +27,10 @@ public class BallControl : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         ThrowBall();
+    }
+
+    internal void IncreaseSpeed(float multipleSpeed)
+    {
+        rigid.velocity *= Mathf.Clamp(multipleSpeed, 1, 2);
     }
 }
